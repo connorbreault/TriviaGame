@@ -1,14 +1,81 @@
+body{
+    background: url(../images/Background.jpg);
+    width: 100%;
+    height: auto;
+    background-size: 100%
+}
 .container {
     text-align: center;
-    border: inset;
     margin: 15px auto;
 }
+h1{
+    color: #73f44f;
+    border: outset #73f447;
+    background: #020202;
+    width: 20%;
+    margin: 30px auto;
+    font-family: 'Share Tech Mono', monospace;
+}
 #startbutt {
-    background: gold;
-    width: 40%;
-    border: goldenrod double;
-    margin: 50px auto;
+    color: #73f44f;
+    border: outset #73f44f;
+    background: #020202;
+    width: 45%;
+    margin: 300px auto;
+    font-family: 'Share Tech Mono', monospace;
+    height: 55px;
+    padding: 5px;
 }
 #startbutt:hover {
-    color: aqua
+    background: #73f44f;
+    color: #020202
+}
+h4{
+    color: #73f44f;
+    border: outset #73f44f;
+    background: #020202;
+    width: 30%;
+    margin: 10px auto;
+    font-family: 'Share Tech Mono', monospace;
+}
+h4:hover {
+    color: green
+}
+#qbox{
+    background: #020202;
+    color: #73f44f;
+    border: inset #73f44f;
+    margin: 20px auto;
+    font-family: 'Share Tech Mono', monospace;
+}
+#abox {
+    display: none;
+    flex-wrap: wrap;
+}
+.butt {
+    background: #020202;
+    color: #73f44f;
+    border: inset #73f44f;
+    width: 45%;
+    height: auto;
+    margin: 15px;
+    font-family: 'Share Tech Mono', monospace;
+}
+.butt:hover{
+    background: #73f44f;
+    color: #020202
+}
+#roundstats{
+    background: #020202;
+    color: #73f44f;
+    border: inset #73f44f;
+    margin: 20px auto;
+    font-family: 'Share Tech Mono', monospace;
+}
+#timer{
+    background: #020202;
+    color: #73f44f;
+    border: inset #73f44f;
+    margin: 20px auto;
+    font-family: 'Share Tech Mono', monospace;
 }

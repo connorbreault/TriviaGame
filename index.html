@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./assets/css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.js"
@@ -18,12 +19,21 @@
 <body>
 
 <div class="container">
-    <h1>Trivia!</h1>
+    <h1>Fallout Trivia</h1>
     <div id="theGoods"></div>
     <div>
         <h2 id="startbutt">Click here to get started</h2>
     </div>
-    <div class="footer" id="timer"></div>
+    <div id="qbox"></div>
+    <div id="abox">
+        <button id="btn1" class="butt" value="0"><span id="choice0"></span></button>
+        <button id="btn2" class="butt" value="1"><span id="choice2"></span></button>
+        <button id="btn3" class="butt" value="2"><span id="choice3"></span></button>
+        <button id="btn4" class="butt" value="3"><span id="choice4"></span></button>
+    </div>
+    <div id="roundstats"></div>
+    <div id="restart"><h4>Restart?</h4></div>
+    <div class="footer" id="timer">Time remaining: </div>
 </div>
 
 <script type="text/javascript" src="./assets/javascript/app.js"></script>

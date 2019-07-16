@@ -8,23 +8,24 @@
 //the timer = 0, hide questions and display round stats
 //restart button = start button
 
-//  VARIABLES
+$("#qbox").hide()
+$("#abox").hide()
+$("#timer").hide()
+$("#roundstats").hide()
+$("#restart").hide()
 
+//  VARIABLES
 $(document).ready(function() {
 
 var rightAnswers = 0
 
 var wrongAnswers = 0
 
-var unanswered = 0
-
 var userGuess = ""
 
-var qSelector
+var qSelected
 
-var timer = 6
-
-var timeOut;
+var timer = 5
 
 var timerRunning = false
 
@@ -32,52 +33,52 @@ var questions = [
     {
         question: "What Does S.P.E.C.I.A.L. Stand For?",
         choices: ["Strength, Perception, Endurance, Charisma, Intelligence, Agility, Luck", "Strength, Prescision, Energy, Creativity, Intuition, Attitude, Luck", "Stealth, Power, Endurance, Courage, Instinct, Awareness, Learning", "Sometimes, People, Call, Me, It, Kinda, Rude actually"],
-        answer: 1,
+        answer: 0,
     },
     {
         question: "In The First Game, Why Was The Vault Dweller Sent Out Into The Wasteland?",
         choices: ["To find a replacement power core", "Search for supplies", "To find a water chip", "To find his son"],
-        answer: 3,
+        answer: 2,
     },
     {
         question: "In What Year Did The Nuclear War Occur?",
         choices: ["1969", "2420", "2017", "2077"],
-        answer: 4,
+        answer: 3,
     },
     {
         question: "Which Soda Company Was Popular Before The War?",
         choices: ["Coca Cola", "Turbo", "Nuka Cola", "Old Possum"],
-        answer: 3,
+        answer: 2,
     },
     {
         question: "What S.P.E.C.I.A.L. Skill Determines How Much The Player Can Carry?",
         choices: ["U", "S", "C", "L"],
-        answer: 2,
+        answer: 1,
     },
     {
         question: "What Does V.A.T.S. Mean?",
         choices: ["Vault-Tec Assisted Targeting System", "Virtual Assisted Targeting System", "Vault-Tec Aim Tracking System", "Virus Augmented Terminal Scope"],
-        answer: 1,
+        answer: 0,
     },
     {
         question: "Where Was The Main Character Shot In The Beginning Of Fallout: New Vegas?",
         choices: ["Neck", "Back", "Head", "Arm"],
-        answer: 3,
+        answer: 2,
     },
     {
         question: 'Who Said "Death is a preferable alternative to Communism"',
         choices: ["Freedom Fighter", "Liberty Prime", "My hero", "President Eden"],
-        answer: 2,
+        answer: 1,
     },
     {
         question: "Why Did The Master Start Infecting People With The FEV Virus?",
         choices: ["It was an accident", "For fun", "To help people survive the wasteland, and eliminate racial differences", "To make an army of slaves"],
-        answer: 3,
+        answer: 2,
     },
     {
         question: "Where Is Bethesda Softworks Headquartered?",
         choices: ["Bethesda, MD", "Irvine, CA", "Rockville, MD", "Boston, MA"],
-        answer: 3,
+        answer: 2,
     },
 ]
 
@@ -88,9 +89,14 @@ var questions = [
 //start functions
 $("#startbutt").on("click", function(){
     startGame()
+    selectQuestion()
+    $("#startbutt").hide()
 })
 function startGame(){
     startTimer()
+    $("#qbox").show()
+    $("#abox").show()
+    $("#timer").show()
 }
 
 //timer functions
@@ -104,13 +110,61 @@ function decrement(){
     $("#timer").html("<h3>Time remaining: " + timer + "</h3>");
     timer --;
     if(timer === 0) {
-            stopTimer()
-            alert("Times up!")
-            $("#timer").hide()
+            complete()
     }
 }
 function stopTimer(){
     clearInterval(intervalId)
     timerRunning = false
+    $("#timer").hide()
+}
+
+//question functions
+function selectQuestion(){
+    var sel = Math.floor(Math.random()*questions.length)
+    newQuestion = questions[sel]
+    $("#qbox").append(newQuestion.question)
+    $("#btn1").html(newQuestion.choices[0])
+    $("#btn2").html(newQuestion.choices[1])
+    $("#btn3").html(newQuestion.choices[2])
+    $("#btn4").html(newQuestion.choices[3])
+}
+function checkAnswer(){
+    if(userGuess === newQuestion.answer){
+        alert("Correct")
+    } else{
+        alert("Wrong")
+    }
+}
+
+ //button functions
+$(".butt").on("click", function(){
+    userGuess = parseInt($(this))
+    checkAnswer()
+    console.log(userGuess)
+})
+
+//complete
+function complete(){
+        stopTimer()
+        $("#qbox").hide()
+        $("#abox").hide()
+        $("#roundstats").show()
+        $("#roundstats").html("Right answers: " + rightAnswers + "<hr>" + "Wrong answers: " + wrongAnswers + "<hr>")
+        $("#restart").show()
+}
+
+//restart
+$("#restart").on("click", function(){
+    restart()
+})
+
+function restart(){
+    selectQuestion()
+    $("#restart").hide()
+    $("#roundstats").hide()
+    startGame()
+    timer = 30
+    startTimer()
 }
 })
