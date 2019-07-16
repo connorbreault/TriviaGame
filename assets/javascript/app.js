@@ -8,6 +8,25 @@
 //the timer = 0, hide questions and display round stats
 //restart button = start button
 
+//variables
+$(document).ready(function() {
+
+var rightAnswers = 0
+
+var wrongAnswers = 0
+
+var unanswered = 0
+
+var userGuess = ""
+
+var qSelector
+
+var timer = 60
+
+var timeOut;
+
+var clockRunning = false
+
 var questions = [
     {
         question: "What Does S.P.E.C.I.A.L. Stand For?",
@@ -40,7 +59,7 @@ var questions = [
         answer: 1,
     },
     {
-        question: "Where Was The Main Character Shot In The Start Of Fallout: New Vegas?",
+        question: "Where Was The Main Character Shot In The Beginning Of Fallout: New Vegas?",
         choices: ["Neck", "Back", "Head", "Arm"],
         answer: 3,
     },
@@ -60,3 +79,4 @@ var questions = [
         answer: 3,
     },
 ]
+})
