@@ -10,7 +10,7 @@ body{
 }
 h1{
     color: #73f44f;
-    border: outset #73f447;
+    border: inset #73f447;
     background: #020202;
     width: 20%;
     margin: 30px auto;
@@ -18,12 +18,12 @@ h1{
 }
 #startbutt {
     color: #73f44f;
-    border: outset #73f44f;
+    border: inset #73f44f;
     background: #020202;
     width: 45%;
     margin: 300px auto;
     font-family: 'Share Tech Mono', monospace;
-    height: 55px;
+    height: auto;
     padding: 5px;
 }
 #startbutt:hover {
@@ -32,7 +32,7 @@ h1{
 }
 h4{
     color: #73f44f;
-    border: outset #73f44f;
+    border: inset #73f44f;
     background: #020202;
     width: 30%;
     margin: 10px auto;
@@ -45,6 +45,8 @@ h4:hover {
     background: #020202;
     color: #73f44f;
     border: inset #73f44f;
+    height: auto;
+    font-size: 30px;
     margin: 20px auto;
     font-family: 'Share Tech Mono', monospace;
 }
@@ -60,6 +62,8 @@ h4:hover {
     height: auto;
     margin: 15px;
     font-family: 'Share Tech Mono', monospace;
+    font-size: 20px;
+    margin: 50px auto;
 }
 .butt:hover{
     background: #73f44f;
@@ -71,11 +75,28 @@ h4:hover {
     border: inset #73f44f;
     margin: 20px auto;
     font-family: 'Share Tech Mono', monospace;
+    font-size: 20px;
 }
 #timer{
     background: #020202;
     color: #73f44f;
     border: inset #73f44f;
     margin: 20px auto;
+    padding: 5px;
     font-family: 'Share Tech Mono', monospace;
 }
+#rstart:hover{
+    background: #73f44f;
+    color: #020202
+}
+@media only screen and (max-width: 1200px) {
+    body {
+      background-size: auto;
+    }
+    h1{
+        width: auto
+    }
+    .butt{
+        margin: 25px auto;
+    }
+  }

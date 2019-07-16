@@ -23,9 +23,7 @@ var wrongAnswers = 0
 
 var userGuess = ""
 
-var qSelected
-
-var timer = 5
+var timer = 30
 
 var timerRunning = false
 
@@ -33,7 +31,7 @@ var questions = [
     {
         question: "What Does S.P.E.C.I.A.L. Stand For?",
         choices: ["Strength, Perception, Endurance, Charisma, Intelligence, Agility, Luck", "Strength, Prescision, Energy, Creativity, Intuition, Attitude, Luck", "Stealth, Power, Endurance, Courage, Instinct, Awareness, Learning", "Sometimes, People, Call, Me, It, Kinda, Rude actually"],
-        answer: 0,
+        answer: 0 || 3,
     },
     {
         question: "In The First Game, Why Was The Vault Dweller Sent Out Into The Wasteland?",
@@ -47,8 +45,8 @@ var questions = [
     },
     {
         question: "Which Soda Company Was Popular Before The War?",
-        choices: ["Coca Cola", "Turbo", "Nuka Cola", "Old Possum"],
-        answer: 2,
+        choices: ["Coca Cola", "Turbo", "Old Possum", "Nuka Cola"],
+        answer: 3,
     },
     {
         question: "What S.P.E.C.I.A.L. Skill Determines How Much The Player Can Carry?",
@@ -99,6 +97,7 @@ function startGame(){
     $("#timer").show()
 }
 
+
 //timer functions
 function startTimer(){
     if(timerRunning == false){
@@ -106,6 +105,7 @@ function startTimer(){
         timerRunning == true
     }
 }
+
 function decrement(){
     $("#timer").html("<h3>Time remaining: " + timer + "</h3>");
     timer --;
@@ -113,58 +113,63 @@ function decrement(){
             complete()
     }
 }
+
 function stopTimer(){
     clearInterval(intervalId)
     timerRunning = false
     $("#timer").hide()
 }
 
+
 //question functions
 function selectQuestion(){
     var sel = Math.floor(Math.random()*questions.length)
     newQuestion = questions[sel]
-    $("#qbox").append(newQuestion.question)
+    $("#qbox").html(newQuestion.question)
     $("#btn1").html(newQuestion.choices[0])
     $("#btn2").html(newQuestion.choices[1])
     $("#btn3").html(newQuestion.choices[2])
     $("#btn4").html(newQuestion.choices[3])
 }
+
 function checkAnswer(){
-    if(userGuess === newQuestion.answer){
-        alert("Correct")
+    if(userGuess == newQuestion.answer){
+        rightAnswers++
+        selectQuestion()
     } else{
-        alert("Wrong")
+        wrongAnswers++
+        selectQuestion()
     }
 }
 
- //button functions
+
+ //button function
 $(".butt").on("click", function(){
-    userGuess = parseInt($(this))
+    userGuess = this.value
     checkAnswer()
-    console.log(userGuess)
 })
+
 
 //complete
 function complete(){
-        stopTimer()
-        $("#qbox").hide()
-        $("#abox").hide()
-        $("#roundstats").show()
-        $("#roundstats").html("Right answers: " + rightAnswers + "<hr>" + "Wrong answers: " + wrongAnswers + "<hr>")
-        $("#restart").show()
+    stopTimer()
+    $("#qbox").hide()
+    $("#abox").hide()
+    $("#roundstats").show()
+    $("#roundstats").html("Right answers: " + rightAnswers + "<hr>" + "Wrong answers: " + wrongAnswers + "<hr>")
+    $("#restart").show()
 }
 
+
 //restart
-$("#restart").on("click", function(){
-    restart()
-})
+$("#restart").on("click", restart)
 
 function restart(){
     selectQuestion()
     $("#restart").hide()
     $("#roundstats").hide()
     startGame()
-    timer = 30
+    timer = 20
     startTimer()
 }
 })
