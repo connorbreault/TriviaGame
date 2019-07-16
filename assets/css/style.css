@@ -1,3 +1,14 @@
 .container {
-    text-align: center
+    text-align: center;
+    border: inset;
+    margin: 15px auto;
+}
+#startbutt {
+    background: gold;
+    width: 40%;
+    border: goldenrod double;
+    margin: 50px auto;
+}
+#startbutt:hover {
+    color: aqua
 }
