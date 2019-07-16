@@ -8,7 +8,8 @@
 //the timer = 0, hide questions and display round stats
 //restart button = start button
 
-//variables
+//  VARIABLES
+
 $(document).ready(function() {
 
 var rightAnswers = 0
@@ -21,11 +22,11 @@ var userGuess = ""
 
 var qSelector
 
-var timer = 60
+var timer = 6
 
 var timeOut;
 
-var clockRunning = false
+var timerRunning = false
 
 var questions = [
     {
@@ -79,4 +80,37 @@ var questions = [
         answer: 3,
     },
 ]
+
+
+
+//  FUNCTIONS
+
+//start functions
+$("#startbutt").on("click", function(){
+    startGame()
+})
+function startGame(){
+    startTimer()
+}
+
+//timer functions
+function startTimer(){
+    if(timerRunning == false){
+        intervalId = setInterval(decrement, 1000)
+        timerRunning == true
+    }
+}
+function decrement(){
+    $("#timer").html("<h3>Time remaining: " + timer + "</h3>");
+    timer --;
+    if(timer === 0) {
+            stopTimer()
+            alert("Times up!")
+            $("#timer").hide()
+    }
+}
+function stopTimer(){
+    clearInterval(intervalId)
+    timerRunning = false
+}
 })
