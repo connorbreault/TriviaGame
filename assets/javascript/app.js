@@ -23,7 +23,7 @@ var wrongAnswers = 0
 
 var userGuess = ""
 
-var timer = 30
+var timer = 20
 
 var timerRunning = false
 
@@ -170,6 +170,9 @@ function restart(){
     $("#roundstats").hide()
     startGame()
     timer = 20
+    rightAnswers = 0
+    wrongAnswers = 0
+    clearInterval(intervalId)
     startTimer()
 }
 })
