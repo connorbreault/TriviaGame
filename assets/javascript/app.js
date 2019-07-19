@@ -23,7 +23,7 @@ var wrongAnswers = 0
 
 var userGuess = ""
 
-var timer = 20
+var timer = 40
 
 var timerRunning = false
 
@@ -78,6 +78,11 @@ var questions = [
         choices: ["Bethesda, MD", "Irvine, CA", "Rockville, MD", "Boston, MA"],
         answer: 2,
     },
+    {
+        question: "What type of energy is required to use power armor in Fallout 4 and 76?",
+        choices: ["Energy cells", "Fusion cells", "Fusion core", "Microfusion cell"],
+        answer: 2
+    }
 ]
 
 
