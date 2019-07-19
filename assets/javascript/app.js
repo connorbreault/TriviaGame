@@ -82,7 +82,47 @@ var questions = [
         question: "What type of energy is required to use power armor in Fallout 4 and 76?",
         choices: ["Energy cells", "Fusion cells", "Fusion core", "Microfusion cell"],
         answer: 2
-    }
+    },
+    {
+        question:"War. War never ''",
+        choices: ["solves the problem", "changes", "stops", "ends"],
+        answer: 1
+    },
+    {
+        question: "What was the main characters name in Fallout 3?",
+        choices: ["Courier", "Vault Dweller", "Soul Survivor", "Lone Wanderer"],
+        answer: 3
+    },
+    {
+        question: "Who founded the New California Republic?",
+        choices: ["Mr.Burkes", "Amata", "Cheif Hanlon", "Tandi"],
+        answer: 3
+    },
+    {
+        question: "What is your mom favorite verse in Fallout 3?",
+        choices: ["Revelation 21:6", "Psalms 18:4", "Genesis 1:1", "John 3:16"],
+        answer: 0
+    },
+    {
+        question: "What is your Fathers name in Fallout 3?",
+        choices: ["Tim", "John", "James", "Ron"],
+        answer: 2
+    },
+    {
+        question: "What country started the Great War?",
+        choices: ["Russia", "China", "Japan", "Korea"],
+        answer: 1
+    },
+    {
+        question: "What was your sons name in Fallout 4?",
+        choices: ["Alex", "Shawn", "James", "Aaron"],
+        answer: 1
+    },
+    {
+        question: "What was the name of the main antagonist in the original Fallout?",
+        choices: ["The Mechanist", "Caesar", "The Master", "Ulysses"],
+        answer: 2
+    },
 ]
 
 
