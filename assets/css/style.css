@@ -102,4 +102,8 @@ button:focus {
     .butt{
         margin: 25px auto;
     }
+    .butt:hover{
+        background: #020202;
+        color: #73f44f;
+    }
   }
