@@ -1,8 +1,9 @@
 body{
     background: url(../images/Background.jpg);
-    width: 100%;
-    height: auto;
-    background-size: 100%
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .container {
     text-align: center;
@@ -20,7 +21,7 @@ h1{
     color: #73f44f;
     border: inset #73f44f;
     background: #020202;
-    width: 45%;
+    width: 50% !important;
     margin: 300px auto;
     font-family: 'Share Tech Mono', monospace;
     height: auto;
@@ -101,9 +102,15 @@ button:focus {
     }
     .butt{
         margin: 25px auto;
+        width: 50%
     }
-    .butt:hover{
-        background: #020202;
-        color: #73f44f;
+    #rstart{
+        width: fit-content;
+        padding: 5px
+    }
+  }
+  @media only screen and (min-width: 700px) {
+    .butt{
+        font-size: 30px !important
     }
   }
