@@ -10,6 +10,8 @@ A simple Fallout themed trivia game, currently hosted through Heroku.  This app 
   - CSS
   - Javascript
 
+## To view this website live, [click here!](https://connorbreault.github.io/TriviaGame/)...
+
 # With this site, we can...
 
   - Test our knowledge of the Fallout universe and lore with afast paced trivia game
